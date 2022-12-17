@@ -1,8 +1,7 @@
-
-import streamlit as st
-import pandas as pd
-import matplotlib as mpl
-import seaborn as sns
+import streamlit as st #1.15.2
+import pandas as pd #1.5.2
+import matplotlib.pyplot as plt #3.5.2
+import seaborn as sns  #0.11.2
 
 st.write('Hello world')
 
@@ -14,7 +13,7 @@ st.write("hola, hola")
 st.write("***")
 st.markdown('[Google](https://www.google.com.pe)')
 
-df = pd.read_csv('hola.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/fwong90/web/main/hola.csv')
 df.dropna(inplace=True)
 
 st.title("Exploracion de vinos")
@@ -35,6 +34,6 @@ if df_dim == 'Filas':
     st.write(df.shape[0])
 
 if st.checkbox("Mostrar la visualizacion"):
-    fig = mpl.pyplot.figure()
+    fig = plt.figure()
     sns.histplot(data=df,x="points", bins= 10)
     st.pyplot(fig)
