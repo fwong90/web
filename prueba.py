@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+import matplotlib as mpl
 import seaborn as sns
 
 st.write('Hello world')
@@ -34,6 +34,6 @@ if df_dim == 'Filas':
     st.write(df.shape[0])
 
 if st.checkbox("Mostrar la visualizacion"):
-    fig = plt.figure()
+    fig = mpl.pyplot.figure()
     sns.histplot(data=df,x="points", bins= 10)
     st.pyplot(fig)
